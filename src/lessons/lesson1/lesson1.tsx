@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from 'react';
-import  CurrencyExchangeContainer  from '../../components/CurrencyExchange';
+import React from 'react';
+import CurrencyExchangeContainer from '../../components/CurrencyExchange';
 // Redux
 // https://tproger.ru/translations/redux-for-beginners/
 // https://monsterlessons.com/project/series/redux-js-dlya-nachinayushih
