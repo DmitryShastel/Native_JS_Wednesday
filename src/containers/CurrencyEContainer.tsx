@@ -1,12 +1,15 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {CurrencyType} from "../redux/currencyReducer";
-import {ChangeActionAC, ChangeCurrencyFieldAC, ChangeCurrentCurrencyAC, typedDispatch} from "../redux/actions";
+import {ChangeActionAC, ChangeCurrencyFieldAC, ChangeCurrentCurrencyAC, CurrencyReducersTypes} from "../redux/actions";
 import CurrencyExchange from "../components/CurrencyExchange";
 import {selectCurrencyState} from "../redux/selectors";
+import {Dispatch} from "redux";
 
 
 const CurrencyEContainer: React.FC = ()  => {
+
+    const dispatch = useDispatch<Dispatch<CurrencyReducersTypes>>();
 
      const {
        currencies,
@@ -16,7 +19,7 @@ const CurrencyEContainer: React.FC = ()  => {
        amountOfCurrency,
    } = useSelector(selectCurrencyState);
 
-    const dispatch = typedDispatch();
+
 
     let currencyRate: number = 0;
     const currenciesName = currencies.map((currency: CurrencyType) => {
@@ -53,7 +56,8 @@ const CurrencyEContainer: React.FC = ()  => {
     };
     const changeCurrentCurrency = (e: React.MouseEvent<HTMLLIElement>) => {
 
-        e.currentTarget.dataset.currency && dispatch(ChangeCurrentCurrencyAC(e.currentTarget.dataset.currency));
+        e.currentTarget.dataset.currency &&
+        dispatch(ChangeCurrentCurrencyAC(e.currentTarget.dataset.currency));
     };
 
     return (

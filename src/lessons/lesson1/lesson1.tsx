@@ -26,5 +26,7 @@ export const Lesson1: React.FunctionComponent = () => {
     );
 };
 
+export default Lesson1;
+
 
 
