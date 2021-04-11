@@ -61,3 +61,79 @@ console.log('lesson 2');
 
 // just a plug
 export default () => {};
+
+
+//Task 07
+//Здесь мы делаем два счётчика: counter и counter2, используя одну и ту же функцию makeCounter.
+//Они независимы? Что покажет второй счётчик? 0,1 или 2,3 или что-то ещё?
+//function makeCounter() {
+//    let count = 0;
+//
+//    return function() {
+//        return count++;
+//    };
+//}
+//
+//let counter = makeCounter();
+//let counter2 = makeCounter();
+//
+//alert( counter() ); // 0
+//alert( counter() ); // 1
+//
+//alert( counter2() ); // 0
+//alert( counter2() ); // 1
+
+
+//Task 08
+//Здесь объект счётчика создан с помощью функции-конструктора.
+//Будет ли он работать? Что покажет?
+
+//function Counter() {
+//    let count = 0;
+//
+//   this.up = function() {
+//       return ++count;
+//    };
+//   this.down = function() {
+//        return --count;
+//   };
+//}
+//
+//let counter = new Counter();
+
+//alert( counter.up() ); // 1
+//alert( counter.up() ); // 2
+//alert( counter.down() ); // 1
+
+
+//Task 09
+//Посмотрите на код. Какой будет результат у вызова на последней строке?
+
+//let phrase = "Hello";
+//
+//if (true) {
+//    let user = "John";
+//
+//    function sayHi() {
+//        alert(`${phrase}, ${user}`);
+//    }
+//}
+//
+//sayHi();// error, Функция sayHi объявлена внутри if, так что она живёт только внутри этого блока. Снаружи нет sayHi.
+
+
+//Task 10
+//Напишите функцию sum, которая работает таким образом: sum(a)(b) = a+b
+
+//function sum(a) {
+//
+//   return function (b) {
+//        return a + b
+//   }
+//}
+//
+//console.log(sum(1)(2));
+//console.log(sum(5)(-1));
+
+//sum(1)(2) = 3
+//sum(5)(-1) = 4
