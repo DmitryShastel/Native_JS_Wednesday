@@ -166,8 +166,26 @@ console.log(a);//15*/
     var a; //hoisting*/
 
 
-console.log(a);//undefined
+/*console.log(a);//undefined*/
+
+/*console.log(a);//undefined
 var a = 4;
+console.log(a)//4
+a = 5;
+console.log(a);//5*/
+
+    var a = 10;
+    function foo() {
+        var a = 20;
+        function boo() {
+            console.log(a);
+        }
+    }
+
+    boo();//error
+
+
+
 
 </script>
 
