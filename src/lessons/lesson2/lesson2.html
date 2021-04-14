@@ -174,7 +174,7 @@ console.log(a)//4
 a = 5;
 console.log(a);//5*/
 
-    var a = 10;
+/*    var a = 10;
     function foo() {
         var a = 20;
         function boo() {
@@ -182,11 +182,30 @@ console.log(a);//5*/
         }
     }
 
-    boo();//error
+    boo();//error*/
 
 
+/*    var a = 10;
+    function foo() {
+        var a = 20;
+        boo();
 
+        function boo() {
+            console.log(a)//20
+        }
+    }
 
+    foo();*/
+
+    var a = 10;
+    function foo(a) {
+        boo();
+        function boo() {
+            console.log(a);//12
+        }
+    }
+
+    foo(12);
 </script>
 
 </body>
