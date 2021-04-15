@@ -252,13 +252,17 @@ console.log(a);//5*/
 console.log(sumTo(100));*/
 
 
-    function sumTo(n) {
+/*    function sumTo(n) {
         if (n == 1) return 1;
         return n + sumTo(n - 1);
     }
-console.log(sumTo(100));
+console.log(sumTo(100));*/
 
+    function factorial(n) {
+        return (n != 1) ? n * factorial(n - 1) : 1;
+    }
 
+console.log(factorial(5))
 
 
 
