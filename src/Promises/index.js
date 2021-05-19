@@ -16,5 +16,7 @@ promise2
     .catch((error) => {
         console.warn(error)
     })
+    .finally(() => {
+        console.log('finish')
+    })
 
-console.log('finish')
