@@ -13,10 +13,15 @@ promise2
     .then((user) => {
         console.log(user)
     })
-    .catch((error) => {
-        console.warn(error)
-    })
-    .finally(() => {
+
+
+const otherPromise = Promise.all([promise1, promise2])
+
+otherPromise
+    .then( () => {
         console.log('finish')
+    })
+    .catch( () => {
+        console.log('initialization failed. Try later')
     })
 
