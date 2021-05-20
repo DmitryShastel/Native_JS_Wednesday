@@ -46,5 +46,32 @@ otherPromise2
     })*/
 
 
-const resolvedPromise = Promise.resolve(100)
-console.log(resolvedPromise)
+const resolvedPromise1 = Promise.resolve(100)
+console.log(resolvedPromise1)
+
+const resolvedPromise2 = Promise.reject(100)
+console.log(resolvedPromise2)
+
+const usersAPI = {
+    getAllUsers() {
+        return Promise.resolve([{name: 'D'}, {name: 'N'}])
+    },
+    login(login, password) {
+        if (login !== '123' && password !== '123') {
+            return Promise.reject({message: 'Inccorect Login password'})
+        } else {
+            return Promise.resolve({name: 'Dima', id: 12, avatarUrl: ''})
+        }
+    }
+}
+
+const pr = usersAPI.getAllUsers()
+pr.then(users => console.log(users))
+
+usersAPI.login('123', '44142')
+.then( () => {
+    // makeRedirect
+})
+.catch( error => {
+    // show error
+})
