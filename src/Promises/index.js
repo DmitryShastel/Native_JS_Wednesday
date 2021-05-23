@@ -137,4 +137,11 @@ const lastPromise = findUserInDB(1)
     .then(friend1 => findUserInDB(friend1.friend))
     .then(friend2 => findUserInDB(friend2.name))
 
+let user = await findUserInDB(1)
+console.log(user)
+let friend = await findUserInDB(user.friend)
+console.log(friend1)
+let friend2 = await findUserInDB(friend1.friend)
+console.log(friend2.name)
+
 
