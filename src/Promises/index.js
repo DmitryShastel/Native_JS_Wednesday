@@ -91,6 +91,7 @@ console.log(promise)*/
 /*axios.get('https://gogle.com')
     .then(res => res.data)
     .then(data => console.log(data))*/
+/*
 
 axios.get('https://gogle.com')
     .then(res => res.data)
@@ -106,4 +107,21 @@ const makeGoogleRequest = () => {
         .then(data => data.vacancies)
 }
 
-makeGoogleRequest().then(vacancies => console.log(vacancies))
+makeGoogleRequest().then(vacancies => console.log(vacancies))*/
+
+let findUserInDB
+
+const lastPromise = findUserInDB(1)
+    .then(user => {
+        console.log(user)
+        findUserInDB(user.friend)
+            .then(user => {
+                console.log(user)
+                findUserInDB(user.friend)
+                    .then(user => {
+                        console.log(user)
+                    })
+            })
+    })
+
+
