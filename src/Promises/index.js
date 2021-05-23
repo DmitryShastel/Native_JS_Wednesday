@@ -1,4 +1,4 @@
-//import axios from "/axios";
+import axios from "/axios";
 
 /*const axios = {}
 const findUserInDB = (id) => {}
@@ -44,6 +44,7 @@ otherPromise2
             : {name: results[1].reson}
         console.log(dataFromGogle.data.vacansies + '; ' + userFromDB.name)
     })*/
+/*
 
 
 const resolvedPromise1 = Promise.resolve(100)
@@ -74,4 +75,35 @@ usersAPI.login('123', '44142')
 })
 .catch( error => {
     // show error
+})*/
+
+/*
+let promise = new Promise(function(resolve,reject){
+    throw new Error('error');
 })
+    .finally(() => alert("done"))
+    .catch(err => alert(err))
+
+console.log(promise)*/
+
+
+
+/*axios.get('https://gogle.com')
+    .then(res => res.data)
+    .then(data => console.log(data))*/
+
+axios.get('https://gogle.com')
+    .then(res => res.data)
+    .then(data => console.log(data))
+
+const makeGoogleRequest = () => {
+    const promise = axios.get('https://gogle.com')
+    const promise2 = promise.then(res => res.data)
+    return promise2;
+
+    return axios.get('https://gogle.com')
+        .then(res => res.data)
+        .then(data => data.vacancies)
+}
+
+makeGoogleRequest().then(vacancies => console.log(vacancies))
