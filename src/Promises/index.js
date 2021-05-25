@@ -1,4 +1,4 @@
-import axios from "/axios";
+//import axios from "/axios";
 
 /*const axios = {}
 const findUserInDB = (id) => {}
@@ -109,7 +109,7 @@ const makeGoogleRequest = () => {
 
 makeGoogleRequest().then(vacancies => console.log(vacancies))*/
 
-let findUserInDB
+/*let findUserInDB
 
 const lastPromise = findUserInDB(1)
     .then(user => {
@@ -122,8 +122,9 @@ const lastPromise = findUserInDB(1)
                         console.log(user)
                     })
             })
-    })
+    })*/
 
+/*
 const lastPromise = findUserInDB(1)
     .then(user => {
         console.log(user)
@@ -136,12 +137,58 @@ const lastPromise = findUserInDB(1)
     })
     .then(friend1 => findUserInDB(friend1.friend))
     .then(friend2 => findUserInDB(friend2.name))
+*/
 
-let user = await findUserInDB(1)
-console.log(user)
-let friend = await findUserInDB(user.friend)
-console.log(friend1)
-let friend2 = await findUserInDB(friend1.friend)
-console.log(friend2.name)
+
+//await
+
+
+
+
+/*async function run() {
+    let user = await findUserInDB(1)
+    console.log(user)
+    let friend = await findUserInDB(user.friend)
+    console.log(friend1)
+    let friend2 = await findUserInDB(friend1.friend)
+    console.log(friend2.name)
+}
+
+run()*/
+
+/*function findUserInDB() {
+
+}*/
+
+/*findUserInDB(1)
+.then(user => {
+        console.log(user.name)
+    })*/
+
+
+function getNumber() {
+    return Promise.resolve( Math.random());
+}
+
+getNumber().then(n => console.log(n))
+getNumber().then(n => console.log(n))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
