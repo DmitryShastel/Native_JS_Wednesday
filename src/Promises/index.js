@@ -178,17 +178,48 @@ function getNumber() {
     return promise
 }
 
-getNumber().then(n => console.log(n))
-getNumber().then(n => console.log(n))
+//getNumber().then(n => console.log(n))
+//getNumber().then(n => console.log(n))
 
 
+/*const repo = {
+    save(data) {
+        localStorage.setItem('some-key', JSON.stringify(data))
+    }
+}
+
+repo.save({name: 'IT-KAMASUTRA'})
+console.log('saved')*/
 
 
+/*setTimeout(() => {
+    console.log(1)
+    setTimeout(() => {
+        console.log(2)
+        setTimeout(() => {
+            console.log(3)
+        }, 3000)
+    }, 2000)
+}, 1000)*/
 
+function wait(ms) {
+    return new Promise( (res) => {
+        setTimeout(() => {
+            res()
+        }, ms)
+    })
+}
 
+async function run() {
+    await wait(1000)
+    console.log(1)
+    await wait(1000)
+    console.log(2)
+    await wait(1000)
+    console.log(3)
+}
 
-
-
+run();
 
 
 
