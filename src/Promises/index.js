@@ -167,7 +167,15 @@ run()*/
 
 
 function getNumber() {
-    return Promise.resolve( Math.random());
+    //Promise.resolve( Math.random());
+
+    const promise = new Promise((resolve, regect) => {
+        regect("some error")
+        setTimeout(() => {
+            resolve(Math.random())
+        }, 3000)
+    })
+    return promise
 }
 
 getNumber().then(n => console.log(n))
