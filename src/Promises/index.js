@@ -1,5 +1,30 @@
 //import axios from "/axios";
 
+var findUserInDB = (id) => {
+    const users = [
+        { id: 1, name: 'Dimych', friend: 3},
+        { id: 2, name: 'Sveta', friend: null},
+        { id: 1, name: 'Valera', friend: 2}
+    ]
+
+    return new Promise((res, reg) => {
+        setTimeout(() => {
+            let user = users.find(u => u.id == id);
+            if (user == null) {
+                reg('user not found')
+            } else {
+                res(user);
+            }
+        }, randomInFromInterval(500, 1500))
+    })
+}
+
+function randomInFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+
 /*const axios = {}
 const findUserInDB = (id) => {}
 
