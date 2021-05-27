@@ -43,7 +43,7 @@ var findUserInDB = (id) => {
     const users = [
         { id: 1, name: 'Dimych', friend: 3},
         { id: 2, name: 'Sveta', friend: null},
-        { id: 1, name: 'Valera', friend: 2}
+        { id: 3, name: 'Valera', friend: 2}
     ]
 
     return new Promise((res, reg) => {
@@ -90,7 +90,6 @@ otherPromise
         console.log('initialization failed. Try later')
     })
 */
-
 /*const otherPromise2 = Promise.allSettled([promise1, promise2])
 
 otherPromise2
@@ -139,7 +138,6 @@ usersAPI.login('123', '44142')
 .catch( error => {
     // show error
 })*/
-
 /*
 let promise = new Promise(function(resolve,reject){
     throw new Error('error');
@@ -148,9 +146,6 @@ let promise = new Promise(function(resolve,reject){
     .catch(err => alert(err))
 
 console.log(promise)*/
-
-
-
 /*axios.get('https://gogle.com')
     .then(res => res.data)
     .then(data => console.log(data))*/
@@ -171,7 +166,6 @@ const makeGoogleRequest = () => {
 }
 
 makeGoogleRequest().then(vacancies => console.log(vacancies))*/
-
 /*let findUserInDB
 
 const lastPromise = findUserInDB(1)
@@ -187,26 +181,23 @@ const lastPromise = findUserInDB(1)
             })
     })*/
 
-/*
-const lastPromise = findUserInDB(1)
+const lastPromise = findUserInDB(4)
     .then(user => {
-        console.log(user)
-        return user;
+        console.log(user.name)
+        return user.friend;
     })
-    .then(user => findUserInDB(user.friend))
+    .then(friendId => findUserInDB(friendId))
     .then(friend1 => {
-        console.log(friend1)
-        return friend1
+        console.log(friend1.name)
+        return friend1.friend
     })
-    .then(friend1 => findUserInDB(friend1.friend))
-    .then(friend2 => findUserInDB(friend2.name))
-*/
+    .then(friendId => findUserInDB(friendId))
+    .then(friend2 => console.log(friend2.name))
+    .catch(error => alert(error))
+
 
 
 //await
-
-
-
 
 /*async function run() {
     let user = await findUserInDB(1)
@@ -218,18 +209,14 @@ const lastPromise = findUserInDB(1)
 }
 
 run()*/
-
 /*function findUserInDB() {
 
 }*/
-
 /*findUserInDB(1)
 .then(user => {
         console.log(user.name)
     })*/
-
-
-function getNumber() {
+/*function getNumber() {
     //Promise.resolve( Math.random());
 
     const promise = new Promise((resolve, regect) => {
@@ -239,11 +226,10 @@ function getNumber() {
         }, 3000)
     })
     return promise
-}
+}*/
 
 //getNumber().then(n => console.log(n))
 //getNumber().then(n => console.log(n))
-
 
 /*const repo = {
     save(data) {
@@ -253,8 +239,6 @@ function getNumber() {
 
 repo.save({name: 'IT-KAMASUTRA'})
 console.log('saved')*/
-
-
 /*setTimeout(() => {
     console.log(1)
     setTimeout(() => {
@@ -264,16 +248,14 @@ console.log('saved')*/
         }, 3000)
     }, 2000)
 }, 1000)*/
-
-function wait(ms) {
+/*function wait(ms) {
     return new Promise( (res) => {
         setTimeout(() => {
             res()
         }, ms)
     })
-}
-
-async function run() {
+}*/
+/*async function run() {
     await wait(1000)
     console.log(1)
     await wait(1000)
@@ -282,7 +264,7 @@ async function run() {
     console.log(3)
 }
 
-run();
+run();*/
 
 
 
