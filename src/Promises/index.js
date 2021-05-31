@@ -41,7 +41,7 @@ var axios = {
 }
 var findUserInDB = (id) => {
     const users = [
-        { id: 1, name: 'Dimych', friend: 3},
+        { id: 1, name: 'Dimych', friend: 4},
         { id: 2, name: 'Sveta', friend: null},
         { id: 3, name: 'Valera', friend: 2}
     ]
@@ -62,6 +62,23 @@ function randomInFromInterval(min, max) {
 }
 
 
+const lastPromise = findUserInDB(1)
+    .then(user => {
+        console.log(user.name)
+        return user.friend;
+    })
+    .then(friendId => findUserInDB(friendId))
+    .catch(error => {
+        return {name: 'Friend Bot', friend: 3}
+    })
+    .then(friend1 => {
+        console.log(friend1.name)
+        return friend1.friend
+    })
+    .then(friendId => findUserInDB(friendId))
+    .then(friend2 => console.log(friend2.name))
+    .catch(error => alert(error))
+
 
 /*const axios = {}
 const findUserInDB = (id) => {}
@@ -76,8 +93,6 @@ promise2
     .then((user) => {
         console.log(user)
     })*/
-
-
 //const otherPromise = Promise.all([promise1, promise2])
 /*
 otherPromise
@@ -181,19 +196,7 @@ const lastPromise = findUserInDB(1)
             })
     })*/
 
-const lastPromise = findUserInDB(4)
-    .then(user => {
-        console.log(user.name)
-        return user.friend;
-    })
-    .then(friendId => findUserInDB(friendId))
-    .then(friend1 => {
-        console.log(friend1.name)
-        return friend1.friend
-    })
-    .then(friendId => findUserInDB(friendId))
-    .then(friend2 => console.log(friend2.name))
-    .catch(error => alert(error))
+
 
 
 
