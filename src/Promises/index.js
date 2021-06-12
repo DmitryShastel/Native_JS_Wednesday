@@ -269,7 +269,7 @@ console.log('saved')*/
 
 run();*/
 
-new Promise(function (resolve, reject) {
+/*new Promise(function (resolve, reject) {
     setTimeout(() => resolve(1), 1000);
 }).then(function(result) {
     console.log(result)
@@ -280,9 +280,26 @@ new Promise(function (resolve, reject) {
 }).then(function(result) {
     console.log(result)
     return result * 2;
-})
+})*/
 
+let promise = new Promise(function(resolve, reject) {
+    setTimeout(() => resolve(1), 1000);
+});
 
+promise.then(function(result) {
+    console.log(result); // 1
+    return result * 2;
+});
+
+promise.then(function(result) {
+    console.log(result); // 1
+    return result * 2;
+});
+
+promise.then(function(result) {
+    console.log(result); // 1
+    return result * 2;
+});
 
 
 
