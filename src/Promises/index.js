@@ -1,6 +1,6 @@
 //import axios from "/axios";
 
-var axios = {
+/*var axios = {
     _fake(url, data) {
         return new Promise((resolve) => {
             setTimeout(() => {
@@ -77,7 +77,7 @@ const lastPromise = findUserInDB(1)
     })
     .then(friendId => findUserInDB(friendId))
     .then(friend2 => console.log(friend2.name))
-    .catch(error => alert(error))
+    .catch(error => alert(error))*/
 
 
 /*const axios = {}
@@ -269,7 +269,18 @@ console.log('saved')*/
 
 run();*/
 
-
+new Promise(function (resolve, reject) {
+    setTimeout(() => resolve(1), 1000);
+}).then(function(result) {
+    console.log(result)
+    return result * 2;
+}).then(function(result) {
+    console.log(result)
+    return result * 2;
+}).then(function(result) {
+    console.log(result)
+    return result * 2;
+})
 
 
 
