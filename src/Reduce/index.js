@@ -44,7 +44,7 @@ alert(answer);*/
 //Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось
 // больше 10-ти
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+/*let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 let num = 0;
 
 let result = arr.reduce((acc, item) => {
@@ -55,11 +55,23 @@ let result = arr.reduce((acc, item) => {
         num++;
         return acc + item;
     }
+})*/
+
+//Дан массив с числами. Узнайте сколько элементов с конца массива надо сложить,
+// чтобы в сумме получилось больше 10-ти.
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let num = 0;
+
+let result = arr.reduceRight((acc, item) => {
+    if(acc > 10 ){
+        console.log(num);
+        return;
+    }else {
+        num++;
+        return acc + item;
+    }
 })
-
-
-
-
 
 
 
